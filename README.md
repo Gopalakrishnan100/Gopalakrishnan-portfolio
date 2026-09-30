@@ -12,7 +12,7 @@
 
 ## Demo
 
-**[Live Portfolio](https://dev-portfolio-mayankagarwal09.vercel.app)**
+**[Live Portfolio](https://gopalakrishnan-dev-portfolio.vercel.app/)**
 
 ---
 
