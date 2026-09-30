@@ -1,0 +1,16 @@
+{
+    "social": [
+        {
+            "network" : "linkedin",
+            "href": "https://www.linkedin.com/in/gopalakrishnan-nachimuthu/"
+        },
+        {
+            "network" : "github",
+            "href": "https://github.com/Gopalakrishnan100/"
+        },
+        {
+            "network" : "email",
+            "href": "mailto:gopal04071999@gmail.com"
+        }
+    ]
+}

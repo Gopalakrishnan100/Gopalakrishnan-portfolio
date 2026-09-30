@@ -1,0 +1,66 @@
+{
+    "intro": "I'm passionate about **continuous learning, exploring new technologies, and improving my development skills**. I enjoy experimenting with modern tools and frameworks to find better ways to build scalable, maintainable, and user-friendly applications.\n\nMy primary focus is **frontend development with React.js**, where I work with JavaScript, TypeScript, Redux Toolkit, RTK Query, reusable components, responsive UI, and REST API integrations. I also have hands-on experience with modern UI technologies such as **Material UI, Tailwind CSS, SCSS, and Shadcn UI**.\n\nAlong with frontend development, I have practical experience in **Python, Django, Django REST Framework, PostgreSQL, and Docker**, which allows me to contribute across both frontend and backend layers.\n\nI also work with development and collaboration tools such as **Git, GitHub/GitLab, Postman, SonarQube, Vitest, React Testing Library, and AI-assisted development tools**. I'm always interested in learning better approaches, exploring emerging technologies, and applying them to real-world projects.",
+    "skills": [{
+     
+            "title": "Languages & Databases",
+            "items" : [
+                {
+                    "icon": "images/skills/js.png",
+                    "title": "JavaScript"
+                },
+                {
+                    "icon": "images/skills/python.png",
+                    "title": "Python"
+                },
+                {
+                    "icon": "images/skills/postgresql.png",
+                    "title": "PostgreSQL"
+                },
+                {
+                    "icon": "images/skills/typescript.png",
+                    "title": "Typescript"
+                }
+        ]},
+        {
+            "title": "Frameworks & Technologies",
+            "items" : [
+                {
+                    "icon": "images/skills/django.png",
+                    "title": "Django"
+                },
+                {
+                    "icon": "images/skills/react.png",
+                    "title": "React"
+                },
+                {
+                    "icon": "images/skills/redux.png",
+                    "title": "Redux"
+                },
+                {
+                    "icon": "images/skills/tailwindcss.png",
+                    "title": "Tailwind"
+                }
+            ]
+        },
+        {
+            "title" : "Tools & Platforms",
+            "items": [
+                {
+                    "icon": "images/skills/git.png",
+                    "title": "Git"
+                },
+                {
+                    "icon": "images/skills/github.png",
+                    "title": "GitHub"
+                },
+                {
+                    "icon": "images/skills/docker.png",
+                    "title": "Docker"
+                },
+                {
+                    "icon": "images/skills/gitlab.png",
+                    "title": "gitLab"
+                }
+            ]
+    }
+]}

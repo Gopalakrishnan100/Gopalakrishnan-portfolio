@@ -1,0 +1,32 @@
+{
+    "experiences": [
+        {
+            "title": "Software Engineer",
+            "subtitle": "Aanrudix",
+            "workType": "Full-time",
+            "workDescription": [
+                "Contributed to enterprise applications for **inventory, asset, and real-estate inspection management**, working across frontend and backend features.",
+                "Designed and developed **reusable React and TypeScript components** for dashboards, forms, tables, workflows, and data-driven interfaces.",
+                "Built complex application workflows including **asset transfers, audits, scheduling, master data, custom fields, and role-based access**.",
+                "Integrated frontend applications with **REST APIs using Redux Toolkit and RTK Query**, handling server state, caching, loading, and error scenarios.",
+                "Contributed to backend APIs and CRUD functionality using **Python, Django, Django REST Framework, and PostgreSQL**.",
+                "Focused on **performance, maintainability, and user experience** while collaborating with the team through development, debugging, testing, and releases."
+            ],
+            "dateText": "06/2025 – Present"
+        },
+        {
+            "title": "Software Engineer Trainee",
+            "subtitle": "Crud Operations",
+            "workType": "Full-time",
+            "workDescription": [
+                "Worked on a **healthcare workspace management platform**, building features used across different user roles and business workflows.",
+                "Developed responsive **dashboards, workspace management features, registration and approval workflows, and reusable UI components**.",
+                "Managed application and server data using **Redux Toolkit and React Query**, with a focus on predictable data fetching and caching.",
+                "Built consistent interfaces using **TypeScript, Tailwind CSS, and Shadcn UI**, while following reusable component patterns.",
+                "Improved application performance through **code splitting, lazy loading, and resource optimization**, contributing to approximately **25% faster page loading**.",
+                "Contributed to application quality through **unit testing, debugging, code reviews, and collaborative Agile development**."
+            ],
+            "dateText": "07/2024 – 05/2025"
+        }
+    ]
+}
