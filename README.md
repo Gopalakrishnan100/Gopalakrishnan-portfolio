@@ -31,10 +31,10 @@ This template ships in two UI flavors — pick the one you like:
 
 ```bash
 # New UI (v2) — default
-git clone https://github.com/mayankagarwal09/dev-portfolio
+git clone https://github.com/Gopalakrishnan100/Gopalakrishnan-portfolio.git
 
 # Classic UI (v1)
-git clone -b v1 https://github.com/mayankagarwal09/dev-portfolio
+git clone -b v1 https://github.com/Gopalakrishnan100/Gopalakrishnan-portfolio.git
 ```
 
 ## Why do you need a portfolio? ☝️

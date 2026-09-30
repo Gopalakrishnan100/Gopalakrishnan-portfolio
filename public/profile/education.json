@@ -1,0 +1,13 @@
+{
+    "education":[
+        {
+            "title": "Aug 2016 - Apr 2020",
+            "cardTitle": "B.E, Mechatronics",
+            "cardSubtitle":"Arjun College Of Technology, Coimbatore",
+            "cardDetailedText": "CGPA - 7",
+            "icon" : {
+                "src": "images/education/arjun-college-logo.png"
+            }
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+/* ================================
+   About Section
+================================ */
+
+.about-bio-tile {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.about-bio-tile p {
+  margin: 0 0 16px;
+  line-height: 1.8;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.about-bio-tile p:last-child {
+  margin-bottom: 0;
+}
+
+.about-bio-tile strong {
+  font-weight: 600;
+}
+
+
+/* ================================
+   Profile Image
+================================ */
+
+.about-image-tile {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-image-tile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.about-image-tile:hover img {
+  transform: scale(1.03);
+}
+
+
+/* ================================
+   What I Do
+================================ */
+
+.about-what-container {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-what-header {
+  display: flex;
+  align-items: center;
+}
+
+.about-what-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+
+/* ================================
+   What I Do Cards
+================================ */
+
+.about-what-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.about-what-tile {
+  min-height: 180px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-what-tile h3 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.about-what-tile p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.about-what-tile strong {
+  font-weight: 600;
+}
+
+
+/* ================================
+   Responsive - Tablet
+================================ */
+
+@media (max-width: 900px) {
+  .about-bio-tile {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+
+  .about-image-tile {
+    grid-column: span 6;
+    grid-row: span 2;
+    min-height: 400px;
+  }
+
+  .about-what-container {
+    grid-column: span 6;
+  }
+
+  .about-what-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================================
+   Responsive - Mobile
+================================ */
+
+@media (max-width: 600px) {
+  .about-bio-tile {
+    grid-column: span 12;
+    grid-row: auto;
+    padding: 24px;
+  }
+
+  .about-bio-tile h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-bio-tile p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .about-image-tile {
+    grid-column: span 12;
+    grid-row: auto;
+    min-height: 350px;
+  }
+
+  .about-what-container {
+    grid-column: span 12;
+  }
+
+  .about-what-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-what-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-what-tile {
+    min-height: auto;
+    padding: 20px;
+  }
+}

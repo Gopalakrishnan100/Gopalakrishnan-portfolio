@@ -1,0 +1,41 @@
+{
+    "logo" : {
+        "source": "images/about/Gopalakrishnan_Image.png",
+        "height" : 50,
+        "width" : 50
+    },
+    "sections": [
+        {
+            "title": "Home",
+            "href": "/",
+            "type": "text"
+        },
+        {
+            "title": "About",
+            "href": "/about",
+            "type": "text"
+        },
+        {
+            "title": "Skills",
+            "href": "/skills",
+            "type": "text"
+        },
+        {
+            "title": "Education",
+            "href": "/education",
+            "type": "text"
+        },
+        {
+            "title": "Experience",
+            "href": "/experience",
+            "type": "text"
+        },
+        
+        {
+            "title": "Resume",
+            "href": "https://drive.google.com/file/d/1Ier65k7ZfDOrNtzkDPLnJGUwZtnxRYNa/view?usp=drive_link",
+            "type": "link"
+        }
+    ]
+
+}
