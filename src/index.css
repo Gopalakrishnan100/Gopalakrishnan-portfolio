@@ -10,3 +10,7 @@ body {
 code {
   font-family: var(--font-mono);
 }
+
+html {
+  scrollbar-gutter: stable;
+}
