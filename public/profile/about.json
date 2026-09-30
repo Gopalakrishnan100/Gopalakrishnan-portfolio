@@ -2,7 +2,7 @@
   "about": {
     "content": "I'm **Gopalakrishnan**, a **Frontend-focused Full Stack Developer** who enjoys turning ideas and requirements into clean, responsive, and user-friendly web applications.\n\nMy primary expertise is in **React.js, JavaScript, TypeScript, Redux Toolkit, and REST API integration**. I've worked on enterprise-style applications involving dashboards, asset and inventory management, dynamic forms, reusable UI components, authentication, and role-based access control.\n\nI also have hands-on backend experience with **Python, Django, Django REST Framework, PostgreSQL, and Docker**. This full-stack exposure helps me understand how different parts of an application work together and build better frontend solutions.\n\nI'm always exploring new technologies, improving my development practices, and looking for opportunities to build products that are both **functional and enjoyable to use**.",
     "image": {
-      "source": "images/about/Gopalakrishnan_Image.png",
+      "source": "images/about/Gopalakrishnan-professional.png",
       "alt": "Gopalakrishnan - Full Stack Developer"
     },
     "whatIDo": {

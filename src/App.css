@@ -59,72 +59,116 @@
   position: relative;
   overflow: hidden;
   background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   padding: var(--space-6);
+  transition: transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.25) 50%, transparent 100%);
+  pointer-events: none;
 }
 
 .tile--interactive {
   transition: transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 
 .tile--interactive:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-color: var(--border-hover);
 }
 
 .tile--accent {
   background: var(--gradient);
-  border-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: #fff;
+  box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.35);
 }
 
-/* Shared pill buttons + tile label (used across hero, projects, etc.) */
+/* Shared pill buttons + tile label */
 .btn-pill {
   display: inline-block;
-  border-radius: 999px;
-  padding: 0.7em 1.5em;
+  border-radius: var(--radius-full);
+  padding: 0.75em 1.7em;
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.95rem;
+  letter-spacing: -0.01em;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   transition: transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
 }
 
 .btn-accent {
   background: var(--gradient);
   color: #fff;
   border: none;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35);
+  z-index: 1;
+}
+
+.btn-accent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  z-index: -1;
 }
 
 .btn-accent:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 26px rgba(6, 182, 212, 0.5);
   color: #fff;
 }
 
+.btn-accent:hover::before {
+  opacity: 1;
+}
+
 .btn-ghost {
-  background: transparent;
+  background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
+  backdrop-filter: var(--glass-blur);
 }
 
 .btn-ghost:hover {
   border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
   transform: translateY(-2px);
-  color: var(--text);
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.15);
 }
 
 .tile-label {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 /* NB: named span-* (not col-*) to avoid colliding with Bootstrap's .col-N grid
@@ -148,36 +192,40 @@
 
 /* ---- Navbar -------------------------------------------------------------- */
 .navbar-custom {
-  font-size: large;
+  font-size: 0.98rem;
   background-color: var(--navbar-bg) !important;
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
   border-bottom: 1px solid var(--border);
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
 .navbar__link {
-  margin-left: 0.6em;
-  margin-right: 0.6em;
-  font-size: 0.95em;
+  margin-left: 0.65em;
+  margin-right: 0.65em;
+  font-size: 0.94em;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   letter-spacing: 0.01em;
   border-bottom: 2px solid transparent;
   transition: color var(--dur) var(--ease);
+  position: relative;
 }
 
 .navbar__link::after {
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.22s;
   background: var(--gradient);
   content: "";
   display: block;
   margin-top: 2px;
-  height: 2px;
+  height: 2.5px;
+  border-radius: 999px;
   width: 0;
+  box-shadow: 0 0 8px var(--accent);
 }
 
-.navbar__link:hover::after { width: 45%; }
+.navbar__link:hover::after { width: 50%; }
 .navbar__link.active::after { width: 100%; }
 .navbar__link.active:hover::after { width: 100%; }
 
@@ -199,16 +247,29 @@
   }
 }
 
+.navbar-toggler {
+  border: 1px solid var(--border) !important;
+  background: var(--surface-2) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0.35rem 0.65rem !important;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--accent) !important;
+}
+
 /* ---- Section heading ----------------------------------------------------- */
 .header {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 5vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
   margin: var(--space-7) 0 var(--space-6);
   position: relative;
   padding-bottom: var(--space-3);
   text-align: center;
+  color: var(--text);
 }
 
 .header::after {
@@ -217,10 +278,11 @@
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 52px;
-  height: 3px;
-  border-radius: 2px;
+  width: 58px;
+  height: 3.5px;
+  border-radius: 999px;
   background: var(--gradient);
+  box-shadow: 0 0 12px var(--accent);
 }
 
 /* ---- Typewriter ---------------------------------------------------------- */
@@ -237,8 +299,9 @@
 
 .Typewriter__cursor {
   font-size: clamp(1rem, 3vw, 1.45rem);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
 }
 
 .social {

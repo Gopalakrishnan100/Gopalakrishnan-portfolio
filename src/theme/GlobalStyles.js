@@ -1,9 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-// Publishes the active theme as CSS custom properties so the plain CSS files in
-// src/css/* can consume the same tokens via var(--…). Spacing / radius / shadow
-// / motion / font tokens give the bento UI a consistent rhythm and one place to
-// retune the whole look.
+// Global styling & CSS custom properties for Electric Midnight & Cyan Glow theme.
+// Supplies typography, layout scales, glassmorphism, atmospheric lighting, and interactive tokens.
 const GlobalStyles = createGlobalStyle`
   :root {
     /* Colour (theme-driven) */
@@ -12,17 +10,29 @@ const GlobalStyles = createGlobalStyle`
     --text-muted: ${({ theme }) => theme.textMuted};
     --accent: ${({ theme }) => theme.accentColor};
     --accent-2: ${({ theme }) => theme.accentColor2};
+    --accent-3: ${({ theme }) => theme.accentColor3 || theme.accentColor};
     --accent-soft: ${({ theme }) => theme.accentSoft};
     --surface: ${({ theme }) => theme.cardBackground};
     --surface-2: ${({ theme }) => theme.cardFooterBackground};
     --border: ${({ theme }) => theme.cardBorderColor};
+    --border-hover: ${({ theme }) => theme.cardBorderHover};
     --navbar-bg: ${({ theme }) => theme.navbarBackground};
     --timeline-line: ${({ theme }) => theme.timelineLineColor};
-    --gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+    --gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent-3) 50%, var(--accent-2) 100%);
+    --gradient-subtle: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(99, 102, 241, 0.08) 100%);
+    --gradient-text: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    --glow-primary: ${({ theme }) => theme.glow1};
+    --glow-secondary: ${({ theme }) => theme.glow2};
 
-    /* Elevation */
+    /* Elevation & Glows */
     --shadow-sm: ${({ theme }) => theme.shadowSm};
     --shadow-md: ${({ theme }) => theme.shadowMd};
+    --shadow-cyan-glow: 0 0 25px -4px rgba(6, 182, 212, 0.35);
+    --shadow-indigo-glow: 0 0 25px -4px rgba(99, 102, 241, 0.35);
+
+    /* Glassmorphism */
+    --glass-blur: blur(16px);
+    --glass-backdrop: saturate(180%) blur(16px);
 
     /* Spacing scale (4px base) */
     --space-1: 0.25rem;
@@ -37,65 +47,84 @@ const GlobalStyles = createGlobalStyle`
     /* Radius */
     --radius-sm: 10px;
     --radius-md: 16px;
-    --radius-lg: 22px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
 
     /* Motion */
-    --ease: cubic-bezier(0.4, 0, 0.2, 1);
-    --dur: 0.25s;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --dur: 0.28s;
 
-    /* Type */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Helvetica Neue', sans-serif;
-    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-    --font-mono: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, monospace;
+    /* Modern Tech Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
   }
 
   html {
-    scrollbar-color: var(--border) transparent;
+    scrollbar-color: var(--border-hover) transparent;
+    scroll-behavior: smooth;
   }
 
   body {
-    /* Direct theme values (as the original did) plus Bootstrap's own body
-       variables so its reboot rules resolve to the active theme regardless of
-       stylesheet order. A pair of soft accent glows adds depth to the page. */
     --bs-body-bg: ${({ theme }) => theme.background};
     --bs-body-color: ${({ theme }) => theme.color};
     background-color: ${({ theme }) => theme.background};
     background-image:
-      radial-gradient(48rem 48rem at 100% -8%, ${({ theme }) => theme.glow1}, transparent 60%),
-      radial-gradient(42rem 42rem at -10% 8%, ${({ theme }) => theme.glow2}, transparent 55%);
+      radial-gradient(60rem 50rem at 90% -10%, var(--glow-primary), transparent 65%),
+      radial-gradient(50rem 45rem at -10% 25%, var(--glow-secondary), transparent 60%),
+      radial-gradient(45rem 40rem at 75% 85%, var(--glow-primary), transparent 55%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: ${({ theme }) => theme.color};
-    transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
+    overflow-x: hidden;
   }
 
   a {
     color: var(--accent);
     text-decoration: none;
+    transition: color var(--dur) var(--ease);
+  }
+
+  a:hover {
+    color: var(--accent-3);
   }
 
   ::selection {
-    background: var(--accent);
-    color: #fff;
+    background: rgba(6, 182, 212, 0.35);
+    color: #ffffff;
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
   }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   ::-webkit-scrollbar-thumb {
     background: var(--border);
-    border-radius: 10px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-muted);
+    background: var(--accent);
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
 
   :focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 
   @media (prefers-reduced-motion: reduce) {
