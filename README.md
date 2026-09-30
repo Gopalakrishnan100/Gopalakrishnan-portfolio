@@ -1,4 +1,4 @@
-# Gopalakrishnan Portfolio [![GitHub](https://img.shields.io/github/license/mayankagarwal09/dev-portfolio?color=blue)](https://github.com/Gopalakrishnan100/Gopalakrishnan-portfolio/blob/master/LICENSE.md)
+# Gopalakrishnan Portfolio
 
 ## A personal developer portfolio built with React + Vite
 
@@ -77,8 +77,3 @@ This app uses client-side routing (`BrowserRouter`). Your host must serve `index
 
 - **GitHub Pages** — copy `dist/index.html` to `dist/404.html` after building.
 
----
-
-## License 📄
-
-This project is licensed under the MIT License — see the [LICENSE.md](LICENSE.md) file for details.
